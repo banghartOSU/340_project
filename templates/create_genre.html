@@ -1,0 +1,15 @@
+{% extends "bootstrap/base.html" %}
+{% block navbar %}
+{{nav.mynavbar.render()}}
+{% endblock %}
+
+{% block content %}
+<h2>Add a Genre</h2>
+<form action="/genres/create" method="POST">
+    <div class="form-group">
+      <label for="genreDescription">Description</label>
+      <input name="genreDescription" type="text" class="form-control" id="genreDescription" placeholder="Enter a description">
+    <input type="submit" class="btn btn-primary"></button>
+  </form>
+
+{% endblock %}

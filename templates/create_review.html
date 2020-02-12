@@ -1,0 +1,28 @@
+{% extends "bootstrap/base.html" %}
+{% block navbar %}
+{{nav.mynavbar.render()}}
+{% endblock %}
+
+{% block content %}
+<h2>Write a Review</h2>
+<form action="/albums/{{ album.id }}/review" method="POST">
+  <div class="form-group">
+    <label for="userFName">User First Name</label>
+    <input name="userFName" type="text" class="form-control" id="userFName" placeholder="Please Enter your first name">
+    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+  </div>
+  <div class="form-group">
+    <label for="userLName">User Last Name</label>
+    <input name="userLName" type="text" class="form-control" id="userLName" placeholder="Please enter your last name">
+  </div>
+  <div class="form-group">
+    <label for="reviewRating">Rating</label>
+    <input name="reviewRating" type="text" class="form-control" id="reviewRating" placeholder="Rating (scale 0.1-10.0)">
+  </div>
+  <div class="form-group">
+    <label for="reviewText">Review</label>
+    <input name="reviewText" type="text" class="form-control" id="reviewText" placeholder="Write your review here">
+  </div>
+  <input type="submit" class="btn btn-primary"></button>
+</form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "bootstrap/base.html" %}
+
+{% block navbar %}
+{{nav.mynavbar.render()}}
+{% endblock %}
+
+{% block content %}
+<h2>{{ artist.name }}</h2>
+<ul>
+    <li>
+        <h4>Description</h4>
+        <ul>
+            <li>{{ artist.description }}</li>
+        </ul>
+        <h4>Albums</h4>
+        <ul>
+            <a href="/albums/{{ albums.id }}"><li>{{ albums.title }} | {{ albums.release_date }}</a></li>
+        </ul>
+    </li>
+</ul>
+
+<br>
+<div class="deleteArtist">
+    <a class="btn btn-danger" role="button">Delete Artist</a>
+</div>
+{% endblock %}

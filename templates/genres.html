@@ -1,0 +1,25 @@
+{% extends "bootstrap/base.html" %}
+{% block navbar %}
+{{nav.mynavbar.render()}}
+{% endblock %}
+
+{% block content %}
+
+{% for genre in genres %}
+
+<ul>      
+    <li>                
+        <h3><a href="#">{{ genre.description }}</a><h3>
+    </li>
+    <ul>
+        <li> Count: 1 | Avg Score: SELECT AVG(rating) from reviews WHERE genre_id = genre_id</li>
+    </ul>   
+    <div class="deleteGenre" style="float: right;">
+        <a class="btn btn-danger btn-sm" role="button">Delete Genre</a>
+    </div>
+        
+</ul>
+{% endfor %}
+
+<a class="btn btn-primary" href="/genres/create" role="button">Add a Genre</a>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "bootstrap/base.html" %}
+{% block navbar %}
+{{nav.mynavbar.render()}}
+{% endblock %}
+
+{% block content %}
+
+{% for artist in artists %}
+<a href="/artists/{{ artist.id }}"><h2>{{ artist.name }}</h2></a>
+    <ul>
+        <li>
+           {{ artist.description }}
+        </li>
+    </ul>
+    <!-- <div class="artist-image">
+        <img src="{{ artist.image }}">
+    </div> -->
+{% endfor %}
+
+<a class="btn btn-primary" href="/artists/create" role="button">Add an Artist</a>
+{% endblock %}
+
+<style>
+    .single-album-tombstone__art {
+    float: left;
+    width: 66.66667%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+</style>

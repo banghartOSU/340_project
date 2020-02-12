@@ -1,0 +1,48 @@
+{% extends "bootstrap/base.html" %}
+
+{% block navbar %}
+{{nav.mynavbar.render()}}
+{% endblock %}
+
+{% block content %}
+<div class="albumTitle">
+    <h3>{{ album.title }}</h3>
+</div>
+<div class="deleteArtist" style="float: right;">
+    <a class="btn btn-danger" role="button">Delete Album</a>
+</div>
+<ul>
+    <div class="single-album-tombstone__art">
+        <img src="{{ album.album_cover}}">
+    </div>
+</ul>
+
+<h2>Reviews</h2>
+<hr>
+<!-- {% for review in reviews %}
+{% endfor %} -->
+
+{{ review.review_text }}
+<h4>{{review.rating}}</h4>
+<h5>{{ user.first_name }} {{ user.last_name }} | {{ user.email }}</h5>
+<div class="deleteArtist" style="float: right;"><a class="btn btn-danger btn-sm" role="button">Delete Review</a></div>
+<br>
+<hr>
+
+<a class="btn btn-primary" href="/albums/{{ album.id }}/review" role="button">Add a Review</a>
+
+
+{% endblock %}
+
+
+
+<style>
+    .single-album-tombstone__art {
+    float: left;
+    width: 66.66667%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+</style>
