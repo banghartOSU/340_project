@@ -11,6 +11,10 @@
 <div class="deleteArtist" style="float: right;">
     <a class="btn btn-danger" role="button">Delete Album</a>
 </div>
+<div class="editAlbum" style="float: right;">
+    <a class="btn btn-primary" role="button">Edit Album</a>
+</div>
+
 <ul>
     <div class="single-album-tombstone__art">
         <img src="{{ album.album_cover}}">
@@ -25,7 +29,8 @@
 {{ review.review_text }}
 <h4>{{review.rating}}</h4>
 <h5>{{ user.first_name }} {{ user.last_name }} | {{ user.email }}</h5>
-<div class="deleteArtist" style="float: right;"><a class="btn btn-danger btn-sm" role="button">Delete Review</a></div>
+<div class="deleteReview" style="float: right;"><a class="btn btn-danger btn-sm" role="button">Delete Review</a></div>
+<div class="editReview" style="float: right;"><a class="btn btn-primary btn-sm" role="button">Edit Review</a></div>
 <br>
 <hr>
 

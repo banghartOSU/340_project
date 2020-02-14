@@ -1,0 +1,33 @@
+{% extends "bootstrap/base.html" %}
+{% block navbar %}
+{{nav.mynavbar.render()}}
+{% endblock %}
+
+{% block content %}
+<form>
+    <div class="form-group">
+      <label for="searchText">Search</label>
+      <input name="searchText" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter search term">
+    </div>
+    <h5>Search By</h5>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="genreCheck">
+        <label class="form-check-label" for="genreCheck">
+          Genre
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="artistCheck">
+        <label class="form-check-label" for="artistCheck">
+          Artist
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="albumCheck">
+        <label class="form-check-label" for="albumCheck">
+          Album
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  {% endblock %}

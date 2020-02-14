@@ -7,26 +7,27 @@
 
 {% for artist in artists %}
 <a href="/artists/{{ artist.id }}"><h2>{{ artist.name }}</h2></a>
+<div class="imgParent">
+    <img src="{{ artist.image }}" alt="Atist Image" class="img-thumbnail">
+</div>
     <ul>
         <li>
            {{ artist.description }}
         </li>
     </ul>
-    <!-- <div class="artist-image">
-        <img src="{{ artist.image }}">
-    </div> -->
+
 {% endfor %}
 
 <a class="btn btn-primary" href="/artists/create" role="button">Add an Artist</a>
-{% endblock %}
 
 <style>
-    .single-album-tombstone__art {
-    float: left;
-    width: 66.66667%;
-    position: relative;
-    min-height: 1px;
-    padding-left: 20px;
-    padding-right: 20px;
+    img {
+    display: block;
+    max-width:500px;
+    max-height:200px;
+    width: auto;
+    height: auto;
     }
 </style>
+{% endblock %}
+

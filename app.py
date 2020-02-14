@@ -18,7 +18,8 @@ def mynavbar():
         View('Recent Reviews', 'index'),
         View('Artists', 'all_artists'),
         View('Albums', 'all_albums'),
-        View('Genres', 'all_genres')
+        View('Genres', 'all_genres'),
+        View('Search', 'search')
     )
     
 @app.route('/')
@@ -120,6 +121,15 @@ def create_review(album_id):
 def create_review_submission(album_id):
     print(album_id)
     return redirect('/albums/%d' % album_id)
+
+
+#####################
+#      Search       #
+#####################
+@app.route('/search', methods=['GET'])
+def search():
+    return render_template("search.html")
+
 
 
 if __name__ == '__main__':
